@@ -8,21 +8,20 @@ import 'package:weather/core/service/weatherservice.dart';
 class WeatherPageViewModel extends FutureViewModel<WeatherModel> {
   final _api = locator<Api>();
 
-  WeatherModel _weatherModel;
-  int get getWeatherModel => _weatherModel.weather[0].id;
+  // WeatherModel _weatherModel;
+  // WeatherModel get getWeatherModel => _weatherModel;
   @override
   Future<WeatherModel> futureToRun() async {
     WeatherModel weatherData = await _api.getCurrentLocationWeather();
-    _weatherModel = weatherData;
     print(weatherData.main.humidity);
     // notifyListeners();
     return weatherData;
     // _weatherModel = weatherData;
   }
 
-  Future getNewWeather() async {
-    var newCityWeather = await _api.fetchWeatherData();
-    _weatherModel = newCityWeather;
-    notifyListeners();
-  }
+  // Future getNewWeather() async {
+  //   var newCityWeather = await _api.fetchWeatherData();
+  //   // _weatherModel = newCityWeather;
+  //   notifyListeners();
+  // }
 }

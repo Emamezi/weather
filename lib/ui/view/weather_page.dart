@@ -11,7 +11,7 @@ class WeatherPage extends StatelessWidget {
     return ViewModelBuilder<WeatherPageViewModel>.reactive(
         viewModelBuilder: () => WeatherPageViewModel(),
         onModelReady: (model) {
-          model.futureToRun();
+          return model.futureToRun();
           // await model.getNewWeather();
         },
         builder: (context, model, child) {
@@ -74,7 +74,7 @@ class WeatherPage extends StatelessWidget {
                     ),
                   ),
                   Text(
-                    '${model.getWeatherModel}°C' ?? 'not',
+                    '${model.data.weather[0].description}°C',
                     style: kcityLabelTextStyle.copyWith(
                       fontSize: 80,
                       fontWeight: FontWeight.bold,

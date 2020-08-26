@@ -27,7 +27,7 @@ class WeatherModel {
 }
 
 class Main {
-  num temp;
+  double temp;
   num pressure;
   num humidity;
   Main({this.temp, this.pressure, this.humidity});

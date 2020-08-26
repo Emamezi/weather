@@ -9,8 +9,8 @@ import 'package:weather/core/service/location_service.dart';
 
 class Api {
   final loc = locator<LocationService>();
-// 7ed647beb78b9e2da5daff30f3412649
-  static const weeather_api_key = '';
+
+  static const weeather_api_key = '7ed647beb78b9e2da5daff30f3412649';
   static const weatherUrl = 'https://api.openweathermap.org/data/2.5/weather?';
   String cityName = 'Lagos';
 

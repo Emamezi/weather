@@ -3,9 +3,9 @@ import 'package:get_it/get_it.dart';
 import 'core/service/location_service.dart';
 import 'core/service/weatherservice.dart';
 
-final locator = GetIt.instance;
+GetIt locator = GetIt.instance;
 
-void setupocator() {
-  locator.registerLazySingleton(() => Api());
-  locator.registerLazySingleton(() => LocationService());
+void setuplocator() {
+  locator.registerLazySingleton<Api>(() => Api());
+  locator.registerLazySingleton<LocationService>(() => LocationService());
 }
